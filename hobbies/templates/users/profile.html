@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Edit Profile</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+<h2>Pending Friend Requests</h2>
+<ul>
+    {% for request in user.received_requests.all %}
+    <li>
+        {{ request.from_user.name }}
+        <a href="{% url 'accept_request' request.id %}">Accept</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

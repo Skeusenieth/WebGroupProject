@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Welcome to Hobbies App!</h1>
+
+<!-- Section: Popular Hobbies -->
+<h2>Popular Hobbies</h2>
+<div class="scrolling-gallery">
+    {% for hobby in popular_hobbies %}
+    <div class="tile" title="{{ hobby.name }}">
+        <img src="{% static 'images/hobbies_placeholder.png' %}" alt="{{ hobby.name }}">
+        <div class="tile-overlay">
+            <p>{{ hobby.name }}</p>
+            <a href="#">View Hobby</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Section: Similar Users -->
+<h2>Similar Users</h2>
+<div class="scrolling-gallery">
+    {% for user in similar_users %}
+    <div class="tile" title="{{ user.name }}">
+        <img src="{% static 'images/user_placeholder.png' %}" alt="{{ user.name }}">
+        <div class="tile-overlay">
+            <p>{{ user.name }}</p>
+            <p>{{ user.common_hobbies }} hobbies in common</p>
+            <a href="#">Send Friend Request</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

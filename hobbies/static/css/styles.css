@@ -1,0 +1,150 @@
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafc;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #004a99;
+}
+
+nav {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    margin-left: 1.5rem;
+    color: #333;
+}
+
+nav a:first-child {
+    margin-left: 0;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: #f0f4f8;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+    color: #777;
+}
+
+/* Buttons */
+.btn {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #004a99;
+}
+
+/* Scrolling Gallery */
+.scrolling-gallery {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem 0;
+    gap: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f0f0f0;
+}
+
+.scrolling-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scrolling-gallery::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.scrolling-gallery::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+.tile {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+}
+
+.tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tile-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+
+.tile:hover .tile-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tile-overlay a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
+}
